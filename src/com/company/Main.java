@@ -24,12 +24,15 @@ public class Main {
         employees.add(sasha);
         employees.add(marcus);
 
-        Collections.sort(employees, new Comparator<Employee>() {
-            @Override
-            public int compare(Employee employee1, Employee employee2) {
-                return employee1.getName().compareToIgnoreCase(employee2.getName());
-            }
-        });
+//        Collections.sort(employees, new Comparator<Employee>() {
+//            @Override
+//            public int compare(Employee employee1, Employee employee2) {
+//                return employee1.getName().compareToIgnoreCase(employee2.getName());
+//            }
+//        });
+
+        Collections.sort(employees, (employee1, employee2) ->
+                employee1.getName().compareToIgnoreCase(employee2.getName()));
 
         for (Employee employee : employees) {
             System.out.println(employee.getName());
